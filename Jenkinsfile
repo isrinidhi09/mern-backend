@@ -16,15 +16,18 @@ pipeline {
                 '''
             }
         }
-        stage('Lint') {
-            steps {
-                // Run linting to ensure code quality
-                bat '''
-                set PATH=%NODEJS_HOME%;%PATH%
-                npm run lint
-                '''
+   stage('Lint') {
+    steps {
+        script {
+            // Explicitly set the path to node_modules/.bin for eslint
+            def nodeModulesBin = "${env.WORKSPACE}/node_modules/.bin"
+            withEnv(["PATH+NODE=${nodeModulesBin}"]) {
+                sh 'eslint .'
             }
         }
+    }
+}
+
         stage('Build') {
             steps {
                 // Build the React app
