@@ -4,8 +4,8 @@ tools{
 nodejs 'nodejs-v22.12.0'
 }
 environment{
-NODEJS_HOME = 'C:\Program Files\nodejs\'
-SONAR_SCANNER_PATH ='C:\Users\srini\Downloads\sonar-scanner-cli-6.2.1.4610-windows-x64\sonar-scanner-6.2.1.4610-windows-x64\bin'
+NODEJS_HOME = 'C:/Program Files/nodejs/'
+SONAR_SCANNER_PATH ='C:/Users/srini/Downloads/sonar-scanner-cli-6.2.1.4610-windows-x64/sonar-scanner-6.2.1.4610-windows-x64/bin'
 }
 stages('Install Dependencies'){
 steps{
