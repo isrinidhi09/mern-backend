@@ -31,7 +31,7 @@ pipeline {
                 // Run linting to ensure code quality
                 bat '''
                 set PATH=%NODEJS_HOME%;%WORKSPACE%\\node_modules\\.bin;%PATH%
-                npm run lint
+                npx eslint .
                 '''              
 
             }
